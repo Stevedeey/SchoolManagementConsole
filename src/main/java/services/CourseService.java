@@ -2,13 +2,13 @@ package services;
 
 public interface CourseService {
 
-    public static void loadCoursesName() { }
+     static void loadCoursesName() { }
 
-    public static String getRegisteredCourseName() {
+     static String getRegisteredCourseName() {
         return null;
     }
 
-    public static void displayRandomCourse(String courseName) { }
+     static void displayRandomCourse(String courseName) { }
 
-    public static void displayAllCourseContents(String courseName) { }
+     static void displayAllCourseContents(String courseName) { }
 }
