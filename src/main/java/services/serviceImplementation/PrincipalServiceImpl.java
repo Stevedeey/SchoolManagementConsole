@@ -83,8 +83,17 @@ public class PrincipalServiceImpl implements PrincipalService {
     public void expelTeacher(Person principal, Person teacher) {
 
         if(principal.getRole().equalsIgnoreCase("Principal")){
+            System.out.println("Attention Please!!!");
+            System.out.println("Termination of appointment!!! \n"+ teacher.getFullname()+"'s " +
+                    "appointment has been terminated immediately");
+
             ArrayList<Integer> listOfIds = PersonData.getIds();
-            boolean isValid =
+            boolean isValid = false;
+            for (int i = 0; i < listOfIds.size(); i++) {
+                if(teacher.getId() == listOfIds.get(i)){
+                    listOfIds.remove(i);
+                }
+            }
 
         }
         else {
@@ -95,6 +104,25 @@ public class PrincipalServiceImpl implements PrincipalService {
 
     @Override
     public void expelNonTeachingStaff(Person principal, Person nonTeacher) {
+
+        if(principal.getRole().equalsIgnoreCase("Principal")){
+        System.out.println("Attention Please!!!");
+        System.out.println("Termination of appointment!!! \n"+ nonTeacher.getFullname()+"'s " +
+                "appointment has been terminated immediately");
+
+        ArrayList<Integer> list = PersonData.getIds();
+        boolean isValid = false;
+            for (int i = 0; i < list.size(); i++) {
+                if(nonTeacher.getId() == list.get(i)){
+                    list.remove(i);
+                }
+            }
+
+        }else {
+            System.out.println("You are not privileged to perform this action");
+        }
+
+
 
     }
 }
