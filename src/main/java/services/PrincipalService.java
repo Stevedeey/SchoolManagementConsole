@@ -10,4 +10,5 @@ public interface PrincipalService {
     void expelTeacher(Person principal, Person teacher);
 
     void expelNonTeachingStaff(Person principal, Person nonTeacher);
+
 }

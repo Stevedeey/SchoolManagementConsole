@@ -1,12 +1,13 @@
 package model;
 
+import utilities.Display;
 import utilities.PersonData;
 
 import javax.naming.NoPermissionException;
 import java.util.ArrayList;
 
 public class Person {
-    private long id;
+    private int id;
     private String fullname;
     private String role;
     private String applicantRole;
@@ -15,13 +16,13 @@ public class Person {
     private String applicantName;
     private int applicantAge;
 
-    public Person(String applicantRole, String applicantName, int applicantAge) {
+    public Person(String applicantName, String applicantRole, int applicantAge) {
         this.applicantRole = applicantRole;
         this.applicantName = applicantName;
         this.applicantAge = applicantAge;
     }
 
-    public Person(long id, String fullname, String role, String gender) throws NoPermissionException {
+    public Person(int id, String fullname, String role, String gender) throws NoPermissionException {
         this.id = id;
         this.fullname = fullname;
         this.role = role;
@@ -49,7 +50,7 @@ public class Person {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -108,4 +109,9 @@ public class Person {
     public void setApplicantAge(int applicantAge) {
         this.applicantAge = applicantAge;
     }
+
+    public void displayPersonInformation() {
+        Display.displayPersonInfo(role, fullname, id, gender);
+    }
+
 }
